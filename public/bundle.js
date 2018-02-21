@@ -106,10 +106,10 @@
 	var Main = __webpack_require__(223);
 
 	// load foundation
-	__webpack_require__(224);
+	__webpack_require__(225);
 	$(document).foundation();
 
-	__webpack_require__(228);
+	__webpack_require__(231);
 
 	ReactDOM.render(React.createElement(
 		Router,
@@ -24909,6 +24909,7 @@
 	'use strict';
 
 	var React = __webpack_require__(8);
+	var Navigation = __webpack_require__(224);
 
 	var Main = function Main(props) {
 		return React.createElement(
@@ -24920,6 +24921,7 @@
 				React.createElement(
 					'div',
 					null,
+					React.createElement(Navigation, null),
 					React.createElement(
 						'p',
 						null,
@@ -24937,13 +24939,83 @@
 /* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	var React = __webpack_require__(8);
+
+	var _require = __webpack_require__(166),
+	    Link = _require.Link,
+	    IndexLink = _require.IndexLink;
+
+	var Navigation = function Navigation() {
+	  return React.createElement(
+	    'div',
+	    { className: 'top-bar' },
+	    React.createElement(
+	      'div',
+	      { className: 'top-bar-left' },
+	      React.createElement(
+	        'ul',
+	        { className: 'menu' },
+	        React.createElement(
+	          'li',
+	          { className: 'menu-text' },
+	          'React Timer App'
+	        ),
+	        React.createElement(
+	          'li',
+	          null,
+	          React.createElement(
+	            IndexLink,
+	            { to: '/', activeClassName: 'active-link' },
+	            'Timer'
+	          )
+	        ),
+	        React.createElement(
+	          'li',
+	          null,
+	          React.createElement(
+	            Link,
+	            { to: '/', activeClassName: 'active-link' },
+	            'Countdown'
+	          )
+	        )
+	      )
+	    ),
+	    React.createElement(
+	      'div',
+	      { className: 'top-bar-right' },
+	      React.createElement(
+	        'ul',
+	        { className: 'menu' },
+	        React.createElement(
+	          'li',
+	          { className: 'menu-text' },
+	          'Created by ',
+	          React.createElement(
+	            'a',
+	            { href: '#' },
+	            'Arlen'
+	          )
+	        )
+	      )
+	    )
+	  );
+	};
+
+	module.exports = Navigation;
+
+/***/ }),
+/* 225 */
+/***/ (function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(225);
+	var content = __webpack_require__(226);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(227)(content, {});
+	var update = __webpack_require__(228)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -24960,10 +25032,10 @@
 	}
 
 /***/ }),
-/* 225 */
+/* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(226)();
+	exports = module.exports = __webpack_require__(227)();
 	// imports
 
 
@@ -24974,7 +25046,7 @@
 
 
 /***/ }),
-/* 226 */
+/* 227 */
 /***/ (function(module, exports) {
 
 	/*
@@ -25030,7 +25102,7 @@
 
 
 /***/ }),
-/* 227 */
+/* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
@@ -25284,23 +25356,25 @@
 
 
 /***/ }),
-/* 228 */
+/* 229 */,
+/* 230 */,
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(229);
+	var content = __webpack_require__(232);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(227)(content, {});
+	var update = __webpack_require__(228)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../../node_modules/css-loader/index.js!./app.css", function() {
-				var newContent = require("!!../../node_modules/css-loader/index.js!./app.css");
+			module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/index.js!./app.scss", function() {
+				var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/index.js!./app.scss");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -25310,15 +25384,15 @@
 	}
 
 /***/ }),
-/* 229 */
+/* 232 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(226)();
+	exports = module.exports = __webpack_require__(227)();
 	// imports
 
 
 	// module
-	exports.push([module.id, "", ""]);
+	exports.push([module.id, ".top-bar, .top-bar ul {\n  background-color: #333333; }\n\n.top-bar .menu-text {\n  color: white; }\n\n.menu > .menu-text > a {\n  display: inline;\n  padding: 0; }\n", ""]);
 
 	// exports
 
